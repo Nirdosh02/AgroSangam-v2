@@ -275,5 +275,4 @@ def generate_agreement(order):
     pdf.output(pdf_file)
     return pdf_file
 
-if __name__ == '__main__':
-    app.run(debug=True)
+
