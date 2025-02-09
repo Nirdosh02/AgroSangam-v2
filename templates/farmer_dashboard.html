@@ -1,0 +1,54 @@
+{% extends "base.html" %} {% block content %}
+<div class="container mt-5">
+  <h2>Farmer Dashboard</h2>
+  <hr />
+
+  <!-- Add Crop Form -->
+  <form method="POST" action="">
+    {{ form.hidden_tag() }}
+
+    <div class="form-group">
+      {{ form.name.label(class="form-label") }} {{
+      form.name(class="form-control") }}
+    </div>
+    <div class="form-group">
+      {{ form.price_per_ton.label(class="form-label") }} {{
+      form.price_per_ton(class="form-control") }}
+    </div>
+    <div class="form-group">
+      {{ form.quantity_available.label(class="form-label") }} {{
+      form.quantity_available(class="form-control") }}
+    </div>
+    <button type="submit" class="btn btn-primary">
+      {{ form.submit.label }}
+    </button>
+  </form>
+
+  <hr />
+
+  <!-- Display Existing Crops -->
+  <h3>Your Crops</h3>
+  {% if crops %}
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price Per Ton</th>
+        <th>Quantity Available</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for crop in crops %}
+      <tr>
+        <td>{{ crop.name }}</td>
+        <td>₹{{ crop.price_per_ton }}</td>
+        <td>{{ crop.quantity_available }} tons</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p>No crops added yet.</p>
+  {% endif %}
+</div>
+{% endblock %}

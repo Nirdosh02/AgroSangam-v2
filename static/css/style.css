@@ -1,0 +1,52 @@
+/* Ensure the body stretches to fill the viewport */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Make the footer stick to the bottom */
+footer {
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: auto;
+}
+
+footer h5 {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+footer i {
+  margin-right: 8px;
+  color: #007bff;
+  font-size: 18px;
+}
+
+/* form */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form .form-group {
+  margin-bottom: 1.5em;
+}
+
+form .btn-primary {
+  width: 100%;
+}
